@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crud</title>
+    <link rel="icon" href="img/1096028.png" type="image/png">
+    
+    <script type="module">
+        import {show_add, add_post, init, show_test} from "./blog.js";
+       
+        document.getElementById("addbutt").addEventListener("click", show_add);
+        document.getElementById("save").addEventListener("click",add_post);
+        const listEL = document.getElementById("postList");
+        init(listEL);
+
+        document.getElementById('testbut').addEventListener("click", show_test);
+        
+    </script>
+
+</head>
+
+<body>
+    <h1>List of Blog Post</h1>
+    <button id="testbut">test</button>
+    <p id="test"></p>
+    
+    <ul id="postList"></ul>
+
+
+    <button id="addbutt">Add Post</button>
+
+    <dialog id="add">
+        
+        Post Title: <input type="text" id="title" value="title of the blog..."> <br> <br>  
+        Post Date: <input type="text" id="date" value="date..."> <br> <br> 
+        Post Summary: <textarea name="Message" id="summ" cols="40" rows="4"></textarea><br><br>
+        <button id="cance" onclick="window.add.close()">cancel</button>
+        <button id="save">save</button>
+    </dialog>
+
+
+</body>
+
+</html>

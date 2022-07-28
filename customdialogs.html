@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Custom Dialogs</title>
+    <link rel="icon" href="img/1096028.png" type="image/png">
+    <script type="text/javascript" src="https://github.com/cure53/DOMPurify/blob/main/src/purify.js"></script>
+    <script type="module">
+        import {show_alert} from "./customdialogs.js"; 
+        import {show_confirm} from "./customdialogs.js"; 
+        import {confirm_mess} from "./customdialogs.js"; 
+        import {confirm_mess2} from "./customdialogs.js"; 
+        import {show_prompt} from "./customdialogs.js"; 
+        import {prompt_mess} from "./customdialogs.js"; 
+        document.getElementById("alertbutt").addEventListener("click",show_alert); 
+        document.getElementById("confirmbutt").addEventListener("click",show_confirm); 
+        document.getElementById("tru").addEventListener("click", confirm_mess);
+        document.getElementById("fal").addEventListener("click", confirm_mess2); 
+        document.getElementById("promptbutt").addEventListener("click",show_prompt); 
+        document.getElementById("ok").addEventListener("click", prompt_mess);
+    </script>
+
+
+</head>
+
+<body>
+
+
+    <h1>Custom Dialogs</h1>
+    <button id="alertbutt">alert</button>
+    <button id="confirmbutt">confirm</button>
+    <button id="promptbutt">prompt</button>
+
+
+
+
+
+
+    <!-- alert dialog-->
+    <dialog id="myalert">
+        Alert Pressed!<br>
+        <button onclick="window.myalert.close();">ok</button>
+    </dialog>
+
+    <!-- confirm dialog-->
+    <dialog id="myconfirm">
+        Do you confirm this? <br><br>
+        <button id="fal">cancel</button>
+        <button id="tru">ok</button>
+    </dialog>
+
+    <!-- prompt dialog-->
+    <dialog id="myprompt">
+        What's your name?<br><br>
+        <input type="text" id="mytext" value="Last, First"><br><br>
+        <button id="canc" onclick="window.myprompt.close()">cancel</button>
+        <button id="ok">ok</button>
+    </dialog>
+
+
+    <hr>
+
+    <p id="conMess"></p>
+
+
+
+
+</body>
+
+</html>

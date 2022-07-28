@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Native Dialogs</title>
+    <link rel="icon" href="img/1096028.png" type="image/png">
+    <script type="text/javascript" src="https://github.com/cure53/DOMPurify/blob/main/src/purify.js"></script>
+   
+
+</head>
+
+<body>
+    <script>
+        document.getElementById("aler").addEventListener("click", () => {
+            alert("some message")
+        });
+
+
+        document.getElementById("confir").addEventListener("click", function() {
+            let text;
+            if (confirm("Do you want to confirm this?") == true) {
+                text = "true";
+            } else {
+                text = "false";
+            }
+            document.getElementById("mess").innerHTML = "The value returned by the confirm method is : " + text;
+        });
+
+        document.getElementById("promp").addEventListener("click", () => {
+            let name = prompt("Please enter your name", "Last, First");
+            if (name != null) {
+                document.getElementById("mess").innerHTML = "Prompt Result: " + name;
+            } else {
+                document.getElementById("mess").innerHTML = "Prompt Result: User didn't enter anything";
+            }
+        });
+
+        document.getElementById("safe").addEventListener("click", () => {
+            let name = prompt("Please enter your name", "Last, First");
+
+            if (name != null) {
+                /*let clean = DOMPurify.sanitize(name);*/
+                document.getElementById("mess").innerHTML = "Prompt Result: " + name;
+            } else {
+                document.getElementById("mess").innerHTML = "Prompt Result: User didn't enter anything";
+            }
+        });
+    </script>
+    <h1>Simple Dialogs</h1>
+    <button type="button" id="aler">Alert</button>
+    <button type="button" id="confir">Confirm</button>
+    <button type="button" id="promp">Prompt</button>
+    <button type="button" id="safe">Safer Prompt</button>
+    <hr>
+
+
+
+
+    <p id="mess"></p>
+
+
+
+
+</body>
+
+
+
+
+</html>
